@@ -8,10 +8,12 @@ Exercises
 4. How could you create a computer player?
 """
 
+from tkinter.messagebox import YES
 from turtle import *
 
 from freegames import line
 
+grid_array = ["0", "0", "0","0", "0", "0","0", "0", "0"]
 
 def grid():
     """Draw tic-tac-toe grid."""
@@ -44,7 +46,6 @@ def floor(value):
 state = {'player': 0}
 players = [drawx, drawo]
 
-
 def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
@@ -54,6 +55,74 @@ def tap(x, y):
     draw(x, y)
     update()
     state['player'] = not player
+    if x == -160 and y == 106:
+        if grid_array[0] == "0":
+            print("Not taken")
+        else:
+            print("Taken")
+
+    elif x == -27 and y == 106:
+        if grid_array[1] == "0":
+            grid_array[1] = 1
+            print("Not taken")
+        else:
+            print("Taken")
+
+    elif x == 106 and y == 106:
+        if grid_array[2] == "0":
+            grid_array[2] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == -160 and y == -27:
+        if grid_array[3] == "0":
+            grid_array[3] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == -27 and y == -27:
+        if grid_array[4] == "0":
+            grid_array[4] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == 106 and y == -27:
+        if grid_array[5] == "0":
+            grid_array[5] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == -160 and y == -160:
+        if grid_array[6] == "0":
+            grid_array[6] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == -27 and y == -160:
+        if grid_array[7] == "0":
+            grid_array[7] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
+
+    elif x == 106 and y == -160:
+        if grid_array[8] == "0":
+            grid_array[8] = 1
+            print("Not taken")
+
+        else:
+            print("Taken")
 
 
 setup(420, 420, 370, 0)
