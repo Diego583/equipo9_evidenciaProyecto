@@ -30,14 +30,14 @@ def drawx(x, y):
 def drawo(x, y):
     """Draw O player."""
     up()
-    goto(x + 67, y + 5)
+    goto(x+30, y)
     down()
     circle(30)
 
 
 def floor(value):
     """Round value down to grid with square size 133."""
-    return ((value + 200) // 133) * 133 - 200
+    return ((value + 200) // 133) * 133 - 160
 
 
 state = {'player': 0}
