@@ -2,7 +2,6 @@
 
 from random import *
 from turtle import *
-
 from freegames import path
 
 car = path('car.gif')
@@ -38,6 +37,7 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    global contador, final
     contador = contador + 1
     print("Clicks: ", contador)
     spot = index(x, y)
