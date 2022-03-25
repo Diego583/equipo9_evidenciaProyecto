@@ -10,6 +10,7 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 contador = 0
+final = 0
 
 
 def square(x, y):
@@ -48,6 +49,10 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        final = final + 1
+        print("Parejas: ", final)
+        if final == 32:
+            print ("¡Felicidades, lo lograste!")
 
 
 def draw():
@@ -61,6 +66,9 @@ def draw():
         if hide[count]:
             x, y = xy(count)
             square(x, y)
+        if count == 64:
+            print("¡Felicidades, lo lograste!")
+            done()
 
     mark = state['mark']
 
