@@ -19,6 +19,7 @@ def grid():
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
+    color('red')
 
 
 def drawx(x, y):
