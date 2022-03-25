@@ -1,11 +1,11 @@
-##Pacman
+## Pacman
 
 Autor: Diego Carrillo
 
-##Tic Tac Toe
+## Tic Tac Toe
 
 Autor: Julio César Gómez
 
-##Memory
+## Memory
 
 Autor: Gabriel Delfín
