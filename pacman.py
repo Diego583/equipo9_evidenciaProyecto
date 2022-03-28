@@ -12,20 +12,20 @@ from turtle import *
 from freegames import floor, vector
 
 # Variables del juego
-state = {'score': 0} # Puntuación
-path = Turtle(visible=False) # Mapa
-writer = Turtle(visible=False) # Marcador
+state = {'score': 0}  # Puntuación
+path = Turtle(visible=False)  # Mapa
+writer = Turtle(visible=False)  # Marcador
 # Draw Pacman
 aim = vector(5, 0)
 pacman = vector(-40, -80)
-ghosts = [ # Posiciones fantasmas
+ghosts = [  # Posiciones fantasmas
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
 # fmt: off
-tiles = [ # Tablero, 0 es espacio negro, 1 es espacio azul
+tiles = [  # Tablero, 0 es espacio negro, 1 es espacio azul
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
     0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
@@ -128,11 +128,11 @@ def movePacman():
     up()
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
-    
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
     ontimer(movePacman, 100)
+
 
 def moveGhosts():
     """Mueve a todos los fantasmas."""
@@ -153,13 +153,13 @@ def moveGhosts():
         up()
         goto(point.x + 10, point.y + 10)
         dot(20, 'red')
-        
     update()
 
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-    ontimer(moveGhosts, 10)
+    ontimer(moveGhosts, 1)
+
 
 # Direccion Pacman
 def change(x, y):
